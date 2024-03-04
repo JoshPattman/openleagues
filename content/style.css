@@ -1,13 +1,13 @@
 .page-background {
-    background-color: white;
+    background-color: #080914;
 }
 
 .text {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #f0f0f0;
 }
 
 .page-header {
-    background-color: #f0f0f0;
     font-size: 50px;
     padding: 20px;
     text-align: center;
@@ -42,9 +42,10 @@
     flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
-    background-color: #f0f0f0;
+    background-color: #212229;
     padding: 20px;
     margin:10px;
+    border-radius: 25px;
 }
 
 .section-header {
@@ -70,8 +71,7 @@
     padding-top: 3px;
     padding-bottom: 3px;
     margin: 5px;
-    border: 1px solid black;
-    background-color: #dedede;
+    background-color: #080914;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -101,10 +101,19 @@
 }
 
 .nice-button {
-    background-color: #f0f0f0;
-    border: 1px solid black;
+    background-color: #8c72ff;
+    border: 0px solid black;
     padding: 10px;
     margin: 10px;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 15px;
+}
+
+.dark-text {
+    color: #080914;
+}
+
+a {
+    color: #8c72ff;
+    text-decoration: none;
 }

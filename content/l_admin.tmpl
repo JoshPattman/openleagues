@@ -7,7 +7,7 @@
     <script src="https://unpkg.com/htmx.org@1.9.10"></script>
     <link rel="stylesheet" href="/style">
 </head>
-<body>
+<body class="page-background">
     <p class="text page-header">Admin: {{.Name}}</p>
     <div class="page-content-container">
 
@@ -22,11 +22,11 @@
             <form class="form text" action="/api/add-match/{{.Secret}}" method="post">
                 <div class="form-item">
                     <label for="winner">Winner:</label>
-                    <input type="text" id="winner" name="winner" required>
+                    <input type="text dark-text" id="winner" name="winner" required>
                 </div>
                 <div class="form-item">
                     <label for="loser">Loser:</label>
-                    <input type="text" id="loser" name="loser" required>
+                    <input type="text dark-text" id="loser" name="loser" required>
                 </div>
                 <div class="form-item">
                     <input class="nice-button" type="submit" value="Add">

@@ -10,17 +10,21 @@
 <body class="page-background">
     <p class="text page-header">OpenLeagues</p>
     <div class="page-content-container">
-        <p class="text page-description">OpenLeagues is the simple platform to create 1v1 leagues and score players based on simple rating system. OpenLeagues is 100% free!  No accounts or login are required.</p>
-        <p class="text page-description">Once you create a league, you get two links - one to share with everyone who can view the league, and one only for the people who can add matches to a league. Once you have the links, dont lose them!</p>
-        <p class="text page-description">To view a league, use the link provided by its creator. Alternatively, create a new league below:</p>
-        <div class="create-form">
-            <form class="form text" action="/api/add-league" method="post">
-                <label for="name" class="text form-item">League Name:</label>
-                <br>
-                <input type="text" id="name" name="name" class="text form-item" required>
-                <br>
-                <input class="nice-button form-item" type="submit" value="Create League">
-            </form>
+        <div class="tile-container">
+            <p class="text page-description">OpenLeagues is the simple platform to create 1v1 leagues and score players based on simple rating system. OpenLeagues is 100% free!  No accounts or login are required.</p>
+            <p class="text page-description">Once you create a league, you get two links - one to share with everyone who can view the league, and one only for the people who can add matches to a league. Once you have the links, dont lose them!</p>
+        </div>
+        <div class="tile-container">
+            <p class="text page-description">To view a league, use the link provided by its creator. Alternatively, create a new league below:</p>
+            <div class="create-form">
+                <form class="form text" action="/api/add-league" method="post">
+                    <label for="name" class="text form-item">League Name:</label>
+                    <br>
+                    <input type="text" id="name" name="name" class="text form-item dark-text" required>
+                    <br>
+                    <input class="nice-button form-item" type="submit" value="Create League">
+                </form>
+            </div>
         </div>
     </div>
 </body>
