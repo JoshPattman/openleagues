@@ -1,0 +1,6 @@
+{{range .}}
+<div class="history-item text">
+    <p class="history-item-text">{{.Place}}: <b>{{.Name}}</b></p>
+    <p class="history-item-text"><span style="color: blueviolet;">{{.RatingInt}}</span> | <span style="color: green;">{{.Wins}}</span>/<span style="color: red;">{{.Losses}}</span> | <span style="color: darkgoldenrod;">{{.WinPercent}}%</span></p>
+</div>
+{{end}}

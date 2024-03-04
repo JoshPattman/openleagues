@@ -1,0 +1,110 @@
+.page-background {
+    background-color: white;
+}
+
+.text {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.page-header {
+    background-color: #f0f0f0;
+    font-size: 50px;
+    padding: 20px;
+    text-align: center;
+}
+
+.page-content-container {
+    margin-left: 25%;
+    margin-right: 25%;
+    /*border: 1px solid black;*/
+}
+
+@media only screen and (max-width: 600px) {
+    .page-content-container {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+}
+
+.page-description {
+    font-size: 20px;
+    text-align: left;
+}
+
+.create-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tile-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin:10px;
+}
+
+.section-header {
+    font-size: 30px;
+    padding: 0px;
+    padding-bottom: 20px;
+    margin: 0px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-item {
+    padding: 5px;
+}
+
+.history-item {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    margin: 5px;
+    border: 1px solid black;
+    background-color: #dedede;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    width: 35%;
+}
+
+.history-item-text {
+    margin: 1px;
+    padding: 0px;
+}
+
+@media only screen and (max-width: 600px) {
+    .history-item {
+        width: 95%;
+    }
+}
+
+.item-list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+    width: 100%;
+}
+
+.nice-button {
+    background-color: #f0f0f0;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenLeagues</title>
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+    <link rel="stylesheet" href="/style">
+</head>
+<body>
+    <p class="text page-header">{{.Name}}</p>
+    <div class="page-content-container">
+        <div class="tile-container">
+            <p class="text section-header">Links</p>
+            <p class="text">Leaderboard Link: <a href="/league/{{.ID}}">http://joshpattman.co.uk:8081/league/{{.ID}}</a></p>
+        </div>
+
+        <div class="tile-container">
+            <p class="text section-header">Ratings</p>
+            <div class="item-list" id="ratings">
+                Loading ratings...
+            </div>
+            <form id="refresh-form">
+                <button class="nice-button" hx-get="/api/ratings/{{.ID}}" hx-trigger="click,load" hx-target="#ratings">Refresh</button>
+            </form>
+        </div>
+
+        <div class="tile-container">
+            <p class="text section-header">History</p>
+            <div class="item-list" id="history">
+                Loading history...
+            </div>
+            <form id="refresh-form">
+                <button class="nice-button" hx-get="/api/history/{{.ID}}" hx-trigger="click,load" hx-target="#history">Refresh</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

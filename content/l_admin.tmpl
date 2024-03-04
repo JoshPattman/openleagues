@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenLeagues</title>
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+    <link rel="stylesheet" href="/style">
+</head>
+<body>
+    <p class="text page-header">Admin: {{.Name}}</p>
+    <div class="page-content-container">
+
+        <div class="tile-container">
+            <p class="text section-header">Links</p>
+            <p class="text">Leaderboard Link: <a href="/league/{{.ID}}">http://joshpattman.co.uk:8081/league/{{.ID}}</a></p>
+            <p class="text"><span style="color: red">Admin Link:</span> <a href="/admin/{{.Secret}}">http://joshpattman.co.uk:8081/admin/{{.Secret}}</a></p>
+        </div>
+
+        <div class="tile-container">
+            <p class="text section-header">Add a new match</p>
+            <form class="form text" action="/api/add-match/{{.Secret}}" method="post">
+                <div class="form-item">
+                    <label for="winner">Winner:</label>
+                    <input type="text" id="winner" name="winner" required>
+                </div>
+                <div class="form-item">
+                    <label for="loser">Loser:</label>
+                    <input type="text" id="loser" name="loser" required>
+                </div>
+                <div class="form-item">
+                    <input class="nice-button" type="submit" value="Add">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

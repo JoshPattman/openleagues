@@ -1,0 +1,10 @@
+{{range .}}
+<div class="history-item text">
+    {{if .Draw}}
+    <p class="history-item-text"><b><span style="color: yellow">{{.Winner}}</span></b> vs <b><span style="color: yellow">{{.Loser}}</span></b></p>
+    {{else}}
+    <p class="history-item-text"><b><span style="color: green">{{.Winner}}</span></b> vs <b><span style="color: red">{{.Loser}}</span></b></p>
+    {{end}}
+    <p class="history-item-text">{{.DateString}}</p>
+</div>
+{{end}}

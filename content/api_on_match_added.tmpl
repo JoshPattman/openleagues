@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenLeagues</title>
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+    <link rel="stylesheet" href="/style">
+</head>
+<body>
+    {{if .AddedOk}}
+    <p class="text page-header">Succsesfully Added Match</p>
+    {{else}}
+    <p class="text page-header">Failed to Add Match</p>
+    {{end}}
+    <div class="page-content-container">
+        <div class="tile-container">
+            {{if .AddedOk}}
+            <p class="text">Sucsessfully added match.</p>
+            {{else}}
+            <p>Sorry, there was an error adding the match: "{{.Err}}". Please try again.</p>
+            {{end}}
+            <form class="text" action="/admin/{{.Secret}}">
+                <input class="form-item nice-button" type="submit" value="Return to Admin Page">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
