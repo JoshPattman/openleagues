@@ -109,6 +109,14 @@
     border-radius: 15px;
 }
 
+.nice-button:hover {
+    background-color: #7e67e6;
+}
+
+.nice-button:active {
+    background-color: #6653be;
+}
+
 .dark-text {
     color: #080914;
 }
@@ -116,4 +124,12 @@
 a {
     color: #8c72ff;
     text-decoration: none;
+}
+
+a:hover {
+    color: #7e67e6;
+}
+
+a:click {
+    color: #6653be;
 }
