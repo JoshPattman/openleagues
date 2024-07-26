@@ -13,4 +13,4 @@ COPY ./content /app/content
 EXPOSE 8080
 
 # Set the initial command to run
-CMD ["/app/olsrv_bin"]
+CMD ["/app/olsrv_bin", "-dbn", "/olsrv_vol/olsrv_db.db"]
