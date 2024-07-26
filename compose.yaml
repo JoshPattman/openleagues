@@ -1,0 +1,11 @@
+services:
+  olsrv:
+    image: olsrv_img
+    ports:
+      - 8080:8080
+    volumes:
+      - olsrv_vol:/olsrv_vol
+    container_name: olsrv_container
+
+volumes:
+  olsrv_vol:
