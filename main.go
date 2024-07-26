@@ -1,6 +1,8 @@
 package main
 
 import (
+	"database/sql"
+	"flag"
 	"math"
 	"math/rand"
 	"sort"
@@ -8,7 +10,27 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+var AppDB *sql.DB
+
 func main() {
+
+	var databaseFileName string
+	flag.StringVar(&databaseFileName, "dbn", "", "Database file name")
+	flag.Parse()
+
+	if databaseFileName == "" {
+		panic("Database file name is required")
+	}
+
+	db, err := DBCreateAndConnect(databaseFileName)
+	if err != nil {
+		panic(err)
+	}
+	defer db.Close()
+	AppDB = db
+
+	gin.SetMode(gin.ReleaseMode)
+
 	r := gin.Default()
 	r.LoadHTMLGlob("content/*")
 
@@ -27,40 +49,6 @@ func main() {
 	r.Run(":8080")
 }
 
-type League struct {
-	Name    string
-	ID      string
-	Secret  string
-	History []*HistoryEntry
-}
-
-type HistoryEntry struct {
-	Winner     string
-	Loser      string
-	Draw       bool
-	DateString string
-}
-
-var Leagues = []*League{}
-
-func LookupLeague(id string) *League {
-	for _, l := range Leagues {
-		if l.ID == id {
-			return l
-		}
-	}
-	return nil
-}
-
-func LookupLeagueBySecret(secret string) *League {
-	for _, l := range Leagues {
-		if l.Secret == secret {
-			return l
-		}
-	}
-	return nil
-}
-
 type Rating struct {
 	Name       string
 	Rating     float64
@@ -73,7 +61,7 @@ type Rating struct {
 }
 
 // Will return ratings sorted by rating
-func CalculateRatings(history []*HistoryEntry) []*Rating {
+func CalculateRatings(history []DBHistory) []*Rating {
 	ratings := map[string]*Rating{}
 	for _, h := range history {
 		if _, ok := ratings[h.Winner]; !ok {

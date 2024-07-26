@@ -5,7 +5,7 @@ RUN mkdir /app
 WORKDIR /app
 
 # Copy the built binary to the working directory
-COPY ./bin/openleagues /app
+COPY ./bin/olsrv_bin /app
 # Copy all files in content in too
 COPY ./content /app/content
 
@@ -13,4 +13,4 @@ COPY ./content /app/content
 EXPOSE 8080
 
 # Set the initial command to run
-CMD ["/app/openleagues"]
+CMD ["/app/olsrv_bin", "-dbn", "/olsrv_vol/olsrv_db.db"]
